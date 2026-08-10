@@ -31,7 +31,7 @@ export default function Dashboard() {
 
   const fetchHistory = () => {
     setLoading(true);
-    fetch(`${API_BASE}/api/history`)
+    fetch(`${API_BASE}/api/history`, { headers: { 'Bypass-Tunnel-Reminder': 'true' } })
       .then(res => res.json())
       .then(data => setHistory(Array.isArray(data) ? data : []))
       .catch(() => setHistory([]))

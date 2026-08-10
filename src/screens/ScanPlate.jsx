@@ -70,7 +70,7 @@ export default function ScanPlate() {
     const formData = new FormData();
     formData.append('image', file);
     try {
-      const res = await fetch(`${API_BASE}/api/scan`, { method: 'POST', body: formData });
+      const res = await fetch(`${API_BASE}/api/scan`, { method: 'POST', body: formData, headers: { 'Bypass-Tunnel-Reminder': 'true' } });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Server error');
       setResult(data);
