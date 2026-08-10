@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle, AlertTriangle, Search, RefreshCw } from 'lucide-react';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8005';
 
 function StatusBadge({ isStolen }) {
   if (isStolen === null || isStolen === undefined) return (
