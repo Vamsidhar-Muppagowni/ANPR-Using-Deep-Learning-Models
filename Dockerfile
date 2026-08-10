@@ -11,11 +11,11 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy backend requirements and install Python dependencies
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy all backend files
-COPY . .
+COPY backend/ .
 
 # Expose the port Hugging Face Spaces uses
 EXPOSE 7860
