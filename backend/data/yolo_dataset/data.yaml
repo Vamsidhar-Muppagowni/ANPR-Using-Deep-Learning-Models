@@ -1,0 +1,6 @@
+names:
+- license_plate
+nc: 1
+path: c:\Users\vamsi\Downloads\NNDL-PlateSenseAI\backend\data\yolo_dataset
+train: train/images
+val: val/images
